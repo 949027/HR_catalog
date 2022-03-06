@@ -3,13 +3,10 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 
 class Employee(MPTTModel):
-    last_name = models.CharField('Фамилия', max_length=100)
-    first_name = models.CharField('Имя', max_length=100)
-    middle_name = models.CharField('Отчество', max_length=100)
+    name = models.CharField('Фамилия', max_length=200)
     position = models.CharField('Должность', max_length=100)
     recruitment = models.DateField('Дата приема на работу')
     salary = models.FloatField('Зарплата')
-    level = models.IntegerField('Уровень')
     parent = TreeForeignKey(
         'self',
         verbose_name='Начальник',
@@ -19,5 +16,8 @@ class Employee(MPTTModel):
         null=True,
     )
 
+    def __str__(self):
+        return f'{self.position} - {self.name}'
+
     class MPTTMeta:
-        order_insertion_by = ['last_name']
+        order_insertion_by = ['name']
