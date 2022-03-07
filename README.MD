@@ -15,6 +15,7 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 В Базу данных будет добавлено более 50 000 записей о сотрудниках.
+
 6. Cоздайте суперпользователя командой:
 ```python
 python manage.py createsuperuser
