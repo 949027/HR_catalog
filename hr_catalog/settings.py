@@ -46,7 +46,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'HR_catalog.urls'
+ROOT_URLCONF = 'hr_catalog.urls'
 
 TEMPLATES = [
     {
@@ -64,7 +64,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'HR_catalog.wsgi.application'
+WSGI_APPLICATION = 'hr_catalog.wsgi.application'
 
 
 # Database
